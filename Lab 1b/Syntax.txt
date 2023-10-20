@@ -84,9 +84,9 @@ The words - predefined tokens are specified between " and ":
 
 <term>::= "IDENTIFIER" 
 	| "INTEGER"
+	| <arithmetic_expression>
 
 <arithmetic_expression>::= "<<" <term> <arithmetic_operator> <term> ">>" 
-			 | "<<" <arithmetic_expression> <arithmetic_operator> <arithmetic_expression> ">>"
  
 <expression>::= "IDENTIFIER" 
 	      | <arithmetic_expression> 
