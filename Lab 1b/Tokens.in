@@ -1,35 +1,87 @@
-Tokens:
-	a. Special symbols, representing:
-		- operators: ++ -- ** // %% <- <) (> <)= = != =(> & #
-		- separators: [] {} space << >> ~ @ 
-		- reserved words: INTEGER CHAR STRING LIST LOOPA READ WRITE CONDITION NEXT WOOPA BOOL TRUE FALSE	
-	b. Identifiers:
- 		- a sequence of letters and digits and it cannot start with digit; the rule is:
-			<letter> ::= "A" | "B" | ... | "Z" | "a" | "b" | ... | "z" 
-			<digit> ::= "0" | "1" | "2" | "3" | "4" | "5" | "6" | "7" | "8" | "9"
-			<digit_seq> ::= <digit> | <digit> <digit_seq>
-			<seq> ::= <letter> | <letter> <seq> | <letter> <digit_seq> <seq> 
-	c. Constants
-		- INTEGER - rule;
-			<sign> ::= "+" | "-"
-			<zero_digit> ::= "0" | "1" | "2" | "3" | "4" | "5" | "6" | "7" | "8" | "9"
-			<non_zero_digit> ::= "1" | "2" | "3" | "4" | "5" | "6" | "7" | "8" | "9"
-			<zero_digit_seq> ::= <zero_digit> | <zero_digit> <zero_digit_seq>
-			<digit_seq> ::= <non_zero_digit> | <non_zero_digit> <zero_digit_seq>
-			<integer> ::= "0" | <digit_seq> | <sign> <digit_seq>
-		- CHAR - rule:
-			<letter> ::= "A" | "B" | ... | "Z" | "a" | "b" | ... | "z" 
-			<digit> ::= "0" | "1" | "2" | "3" | "4" | "5" | "6" | "7" | "8" | "9"	
-			<character> ::= <digit> | <letter>
-		- STRING - rule:
-			<letter> ::= "A" | "B" | ... | "Z" | "a" | "b" | ... | "z" 
-			<digit> ::= "0" | "1" | "2" | "3" | "4" | "5" | "6" | "7" | "8" | "9"	
-			<character> ::= <digit> | <letter>
-			<string> ::= <character> | <character> <string>
-		- BOOL - rule:
-			<bool>::= "TRUE" | "FALSE"
-  		
-			
-			
-			
- 
+++ 
+-- 
+** 
+// 
+%% 
+<- 
+<) 
+(> 
+<)= 
+= 
+!= 
+=(> 
+& 
+#
+[] 
+{} 
+space 
+<< 
+>> 
+~ 
+@ 
+INTEGER 
+CHAR 
+STRING 
+LIST 
+LOOPA 
+READ 
+WRITE 
+CONDITION 
+NEXT 
+WOOPA 
+BOOL 
+TRUE 
+FALSE
+_
+a 
+b 
+c 
+d 
+e 
+f 
+g 
+h 
+i 
+j 
+k
+l 
+m 
+n 
+o 
+p 
+q 
+r 
+s 
+t 
+u 
+v 
+w 
+x 
+y 
+z
+A 
+B
+C 
+D 
+E 
+F 
+G 
+H 
+I 
+J 
+K 
+L 
+M 
+N 
+O 
+P 
+Q
+R
+S
+T
+U
+V
+W
+X
+Y
+Z
