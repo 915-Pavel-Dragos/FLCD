@@ -1,0 +1,97 @@
+Syntax:
+The words - predefined tokens are specified between " and ":
+
+<program>::= "@" <compound_statement> "@"
+
+<bool_operator>::= "&" 
+		 | "#"
+
+<arithmetic_operator>::= "++" 
+		       | "--" 
+		       | "**" 
+		       | "//" 
+		       | "%%"
+
+<type>::= "CHAR" 
+	| "INTEGER" 
+	| "STRING" 
+	| "BOOL"
+
+<list_declaration_statement>::= <type> "LIST" "IDENTIFIER" "<-" "{" <value> "}"
+
+<get_element_list>::= "IDENTIFIER" "{" <number> "}"
+
+<statement>::= <read_statement> 
+	     | <write_statement> 
+	     | <if_statement>
+	     | <for_statement>
+	     | <while_statement>
+	     | <assigment_statement>
+	     | <declaration_statement>
+	     | <list_declaration_statement>
+	     | <comment_statement>
+
+<compound_statement>::= <statement> 
+		      | <statement> <compound_statement> 
+
+<letter>::= "A" | ... | "Z" | "a" | ... | "z" | "space"
+
+<text>::= <letter> 
+	| <letter> <text>
+	| <number> <text>
+	| <number>
+	| "." 
+	| "." <text>
+
+<true_or_false>::= "TRUE" | "FALSE"
+
+<value>::= <number> | <text> | <true_or_false>
+
+<comment_statement>::= "~" <text> "~"
+
+<declaration_statement>::= <type> "IDENTIFIER"
+
+<assignment_statement>::= <declaration_statement> "<-" <value> 
+			| <declaration_statement> "<-" <arithmetic_expression>
+			| <declaration_statement> "<-" <type> "<<" <read_statement> ">>"
+			| "IDENTIFIER" "<-" <value>
+			| "IDENTIFIER" "<-" <arithmetic_expression>
+			| <get_element_list> "<-" <value>
+			| <get_element_list> "<-" <arithmetix_expression>
+
+<write_statement>::= "WRITE" "<<" <text> ">>"| "WRITE" "<<" "IDENTIFIER" ">>"
+
+<read_statement>::= "READ" "<<" <text> ">>"
+
+<non_zero_digit>::= "1" | "2" | ... | "9"
+
+<digit>::= "0" | "1" | "2" | ... | "9"
+
+<number>::= <non_zero_digit> 
+	  | <digit> <number> 
+
+<for_statement>::= "LOOPA" "<<" "INTEGER" "IDENTIFIER" "<-" <number> "|" <compound_condition> "|" <number> ">>" "[" <compound_statement> "]"
+
+<if_statement>::= "CONDITION" "<<" <compound_statement> ">>" "[" <compound_statement> "]"
+		| "CONDITION" "<<" <compound_statement> ">>" "[" <compound_statement> "]" "NEXT" <if_statement>
+		| "CONDITION" "<<" <compound_statement> ">>" "[" <compound_statement> "]" "NEXT" <compound_statement>
+
+<while_statement>::= "WOOPA" "<<" <compound_condition> ">>" "[" <compound_statement> "]"
+
+<compound_condition>::= <condition> <bool_operator> <condition> 
+		      | <condition> <bool_operator> <condition> <compound_condition> 
+		      | <term> <bool_operator> <term>
+
+<term>::= "IDENTIFIER" 
+	| "INTEGER"
+
+<arithmetic_expression>::= "<<" <term> <arithmetic_operator> <term> ">>" 
+			 | "<<" <arithmetic_expression> <arithmetic_operator> <arithmetic_expression> ">>"
+ 
+<expression>::= "IDENTIFIER" 
+	      | <arithmetic_expression> 
+
+<condition>::= <expression> <relation> <expression>
+
+<relation>::= "<)" | "<)=" | "=" | "!=" | "=(>" | "(>"
+

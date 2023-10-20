@@ -1,0 +1,7 @@
+Lexic:
+
+	a. Upper (A-Z) and lower (a-z) case letters of the English alphabet.
+
+	b. Underline character '_'.
+		
+	c. Decimal numbers (0-9)
