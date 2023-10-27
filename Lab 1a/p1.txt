@@ -9,6 +9,6 @@
 	]
 	CONDITION<< divisors = 0 >>[
 		WRITE<< 'NUM is a prime number. '>>
-	]
+	]  //here you should have added the else condition, otherwise it prints twice
 	WRITE<< 'NUM is not a prime number. '>>
 @
