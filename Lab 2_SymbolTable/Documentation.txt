@@ -1,0 +1,30 @@
+link to GitHub -> https://github.com/915-Pavel-Dragos/FLCD/tree/master/Lab%202_SymbolTable
+
+This Symbol Table is implemented using a hash table with the hash function being key % capacity.
+
+The class Node is for encapsulating the functions corresponding to each key - value pair.
+
+The only functions there are in this class are the constructor for creating the named nodes that are going to be added in the hash table
+and the __str__ function for modifying the way nodes look when they are printed.
+
+For the intern representation of the hash table is a list of lists is used the main list being of a fixed capacity, which is initialized
+along with the size and capacity field in the constructor of the class.
+
+The insert function uses the hash method to get the index in which list should the new pair be added and then appends it.
+This usage of the lis of lists also resolves the collisions that may appear as if two pairs have the same hash value they will just be 
+added to the list that is on the index(in the main list) with the same value as the result of the hash function
+The function also increses the size with one.
+
+The search function searched the pair needed by key and value(in case there are multiple pairs with the same value) and then returns 
+True or False based on whether the pair wasa found or not.
+
+The remove function searches for a pair, based on its key and value and then it removes it from the list whether the pair was found or not
+and it also decreses the size with one.
+
+The __str function modifies the way the SymbolTable looks when it is printed to the concole.
+
+The __len__ function is a function to modify the behaviour of the SymbolTable class when it is given as parameter to the len() function and
+it returns the actual size of the SymbolTable.
+
+The __contains__ function is a function to modify the behaviour of the SymbolTable class when it is given as parameter to the in function 
+and by callinf the search method it returns True or False, based on the fcat that the pair was found or not.
