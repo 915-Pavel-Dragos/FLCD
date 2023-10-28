@@ -41,6 +41,7 @@ class SymbolTable:
         for element in self.table[index]:
             if element.value == value:
                 self.table[index].remove(element)
+                self.size -= 1
 
     def __str__(self):
         elements = []
