@@ -20,11 +20,20 @@ class SymbolTable:
             self.table.append(_mylist)
 
     def __hash_function(self, key):
-        return hash(key) % self.capacity
+        _sum = 0
+        for letter in key:
+            _sum += ord(letter)
+        return _sum % self.capacity
 
     def insert(self, key, value):
         index = self.__hash_function(key)
-        self.table[index].append(Node(key, value))
+        key_already_in_hashtable = False
+        for element in self.table[index]:
+            if element.key == key:
+                element.value = value
+                key_already_in_hashtable = True
+        if not key_already_in_hashtable:
+            self.table[index].append(Node(key, value))
         self.size += 1
 
     def search(self, key, value):
@@ -65,11 +74,11 @@ class SymbolTable:
 
 def main():
     my_symbol_table = SymbolTable(12)
+    my_symbol_table.insert('a', 5)
+    my_symbol_table.insert('a', 7)
+    my_symbol_table.insert('m', 5)
+    my_symbol_table.insert('c', 5)
 
-    for _ in range(12):
-        key = randint(1, 12)
-        value = randint(1, 12)
-        my_symbol_table.insert(key, value)
     print(my_symbol_table)
 
 
