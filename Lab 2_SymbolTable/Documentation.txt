@@ -1,6 +1,6 @@
 link to GitHub -> https://github.com/915-Pavel-Dragos/FLCD/tree/master/Lab%202_SymbolTable
 
-This Symbol Table is implemented using a hash table with the hash function being key % capacity.
+This Symbol Table is implemented using a hash table with the hash function being the sum of the ASCII values of the characters that form the key modulo the capacity of the symbol table.
 
 The class Node is for encapsulating the functions corresponding to each key - value pair.
 
