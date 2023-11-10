@@ -1,0 +1,14 @@
+~problem 1~
+@
+	INTEGER divisors <- 0
+	INTEGER num <- INTEGER<< READ << 'Enter a value for num:' >> >>
+	LOOPA << INTEGER index <- 2 | index <) num | 1 >>[
+		CONDITION<< num %% index = 0 >>[
+			divisors <- divisors ++ 1
+		]
+	]
+	CONDITION<< divisors = 0 >>[
+		WRITE<< 'NUM is a prime number. '>>
+	]
+	WRITE<< 'NUM is not a prime number. '>>
+@
