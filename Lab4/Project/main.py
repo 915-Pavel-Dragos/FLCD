@@ -39,6 +39,10 @@ class SymbolTable:
             _sum += ord(letter)
         return _sum % self.capacity
 
+    def get_value_by_key(self, key):
+        index = self.__hash_function(key)
+        return self.table[index][0].value
+
     def insert(self, key, value):
         index = self.__hash_function(key)
         if self.search(key) == -1:
@@ -230,13 +234,15 @@ class Exec:
                         if index == -1:
                             constants.insert(elem, my_index_c)
                             my_index_c += 1
-                        my_pif.add(elem, my_index_c)
+                        value = constants.get_value_by_key(elem)
+                        my_pif.add(elem, value)
                     elif check_identifier(elem):
                         index = identifiers.get_index(elem)
                         if index == -1:
                             identifiers.insert(elem, my_index_i)
                             my_index_i += 1
-                        my_pif.add(elem, my_index_i)
+                        value = identifiers.get_value_by_key(elem)
+                        my_pif.add(elem, value)
                     elif elem[0] != '~':
                         errors.append((elem, general_index))
                 general_index += 1
