@@ -1,0 +1,23 @@
+To represent the FA I used a list for the set of states(Q), for the alphabet(Sigma), for the inital state(q0) and for the set 
+of final states.
+
+For the set of transitions I used a dictionary, in which the key is a tuple formed by the start state and the value of that state from 
+the alphabet and the final state of the transition.
+
+<Transition> ::= "(" <State> "," <Symbol> ")" "->" <State>
+
+<TransitionRules> ::= <Transition> | <Transition> <TransitionRules>
+
+<State> ::= "a" | "b" | "c"
+
+<StateList> ::= <State> | <State> <StateList>
+
+<Symbol> ::= "1" | "2"
+
+<SymbolList> ::= <Symbol> | <Symbol> <SymbolList>
+
+<Automaton> ::= "Q = {" <StateList> "}" 
+               "Sigma = {" <SymbolList> "}" 
+               "q0 = " <State>
+               "F = {" <StateList> "}" 
+               "Gamma = {" <TransitionRules> "}"
