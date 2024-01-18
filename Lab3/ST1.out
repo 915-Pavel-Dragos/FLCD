@@ -1,0 +1,2 @@
+HashTable was used to represent the SymbolTable
+[['(2, 2)', "('NUM is not a prime number. ', 5)"], ["('NUM is a prime number. ', 4)"], ["('Enter a value for num:', 1)"], ['(0, 0)'], ['(1, 3)']]

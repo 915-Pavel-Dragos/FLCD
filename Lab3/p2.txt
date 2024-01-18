@@ -1,0 +1,22 @@
+~problem 2~
+@
+	INTEGER num1 <- INTEGER<< READ<< 'Please enter a value for num1: ' >> >>
+	INTEGER num2 <- INTEGER<< READ<< 'Please enter a value for num2: ' >> >>
+	INTEGER num3 <- INTEGER<< READ<< 'Please enter a value for num3: ' >> >>
+	CONDITION<< num1 <) num2 >>[
+		CONDITION<< num1 <) num3 >>[
+			WRITE<< 'NUM1 is the smallest.' >>
+		]
+		NEXT[
+			WRITE<< 'NUM3 is the smallest.' >>
+		]
+	]
+	NEXT[
+		CONDITION<< num2 <) num3 >>[
+			WRITE<< 'NUM2 is the smallest.' >>
+		]
+		NEXT[
+			WRITE<< 'NUM3 is the smallest.' >>
+		]
+	]
+@
